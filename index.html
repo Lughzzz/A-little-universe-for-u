@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Universe Made for Cinta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<header>
+  <h1 data-t="title"></h1>
+  <button id="music" type="button" aria-pressed="false">♪ Music: off</button>
+</header>
+<nav id="dots" aria-label="Chapters"></nav>
+
+<main>
+  <section class="chapter" hidden>
+    <h2 tabindex="-1" data-t="chapters.0"></h2>
+    <button id="env" class="env" type="button" aria-expanded="false" aria-label="Open the envelope"><span class="flap"></span><span class="heart">♡</span></button>
+    <p><button id="openLetter" type="button" data-t="ui.openLetter"></button></p>
+    <article id="letter" class="card paper" hidden></article>
+    <p><button id="skip1" type="button" class="ghost" hidden data-t="secret.skip"></button></p>
+    <p><button id="next1" type="button" data-go hidden data-t="ui.next"></button></p>
+  </section>
+
+  <section class="chapter" hidden>
+    <h2 tabindex="-1" data-t="chapters.1"></h2>
+    <div id="cake" class="cake" role="img" aria-label="Birthday cake with a candle"><div class="candle"><i class="flame"></i></div><div class="layer top"></div><div class="layer"></div></div>
+    <p class="hand" id="bdate"></p>
+    <p><button id="wish" type="button" data-t="cake.btn"></button></p>
+    <article id="wishMsg" class="card" hidden aria-live="polite"></article>
+    <p><button id="next2" type="button" data-go hidden data-t="ui.next"></button></p>
+  </section>
+
+  <section class="chapter" hidden>
+    <h2 tabindex="-1" data-t="chapters.2"></h2>
+    <div id="gallery" class="gallery"></div>
+  </section>
+
+  <section class="chapter" hidden>
+    <h2 tabindex="-1" data-t="chapters.3"></h2>
+    <div id="quiz" class="card"></div>
+    <p><button id="next4" type="button" data-go hidden data-t="ui.next"></button></p>
+  </section>
+
+  <section class="chapter" hidden>
+    <h2 tabindex="-1" data-t="chapters.4"></h2>
+    <div id="gifts" class="gifts"></div>
+    <article id="surprise" class="card" hidden aria-live="polite"></article>
+  </section>
+
+  <section class="chapter" hidden>
+    <h2 tabindex="-1" data-t="chapters.5"></h2>
+    <p class="small" data-t="game.intro"></p>
+    <div id="game" class="game"></div>
+    <p class="hand" id="moves"></p>
+    <article id="gameMsg" class="card" hidden aria-live="polite"></article>
+    <p><button id="gameAgain" type="button" class="ghost" hidden data-t="game.again"></button></p>
+  </section>
+
+  <section class="chapter" hidden>
+    <h2 tabindex="-1" data-t="chapters.6"></h2>
+    <article id="lockBox" class="card"><p><b data-t="secret.lockedTitle"></b></p><p class="small" data-t="secret.lockedHint"></p><ul id="reqs" class="reqs"></ul></article>
+    <article id="secret" class="card paper" hidden aria-live="polite"></article>
+    <p><button id="skip7" type="button" class="ghost" hidden data-t="secret.skip"></button></p>
+  </section>
+
+  <section class="chapter" hidden>
+    <h2 tabindex="-1" data-t="chapters.7"></h2>
+    <p><button id="openLast" type="button" data-t="last.btn"></button></p>
+    <article id="last" class="card paper" hidden></article>
+    <p><button id="skip8" type="button" class="ghost" hidden data-t="secret.skip"></button></p>
+    <p>
+      <button id="replay" type="button" data-t="ui.replay"></button>
+      <button id="back" type="button" class="ghost" data-t="ui.back"></button>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <button id="prev" type="button">← Previous</button>
+  <span id="pos" aria-live="polite"></span>
+  <button id="next" type="button">Next →</button>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="lb" aria-label="Photo viewer"><div id="lbBody"></div><button id="lbClose" type="button">Close ✕</button></dialog>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
